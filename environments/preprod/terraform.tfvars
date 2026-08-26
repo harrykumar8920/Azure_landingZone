@@ -7,10 +7,20 @@ rgs = {
     name     = "rg-VSR-2"
     location = "centralindia"
   }
+  rg3 = {
+    name     = "rg-VSR-3"
+    location = "centralindia"
+  }
 }
 
 vnets = {
   vnet1 = {
+    name                = "vnet-VSR"
+    location            = "centralindia"
+    resource_group_name = "rg-VSR"
+    address_space       = ["10.0.0.0/16"]
+  }
+  vnet2 = {
     name                = "vnet-VSR"
     location            = "centralindia"
     resource_group_name = "rg-VSR"
@@ -36,6 +46,12 @@ subnets = {
     resource_group_name  = "rg-VSR"
     virtual_network_name = "vnet-VSR"
     address_prefixes     = ["10.0.3.0/24"]
+  }
+  snet4 = {
+    name                 = "frontend-subnet-dev-2"
+    resource_group_name  = "rg-VSR"
+    virtual_network_name = "vnet-VSR"
+    address_prefixes     = ["10.0.4.0/24"]
   }
 }
 
